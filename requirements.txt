@@ -1,0 +1,4 @@
+Django==1.11.29
+gunicorn==19.10.0
+mysql-connector==2.2.9
+pytz==2022.1

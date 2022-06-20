@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+
+h3{font-family: Verdana, Geneva, Tahoma, sans-serif;font-size:large;color:white;}
+</style>
+</head>
+<body bgcolor="bindhi">
+    <form action="" method="post">
+        {%csrf_token%}
+    <fieldset>
+        <legend><h3>Form</h3></legend>
+        <table>
+        <tr>
+            <td><h3>Name:<br>
+                <input type="text" required name="t1" id=""><br><br>
+                Age:<br>
+                <input type="text" name="t2" id=""><br><br>                
+                DOB:<br>
+                <input type="date" name="t3" id=""><br><br>
+                Mail:<br>
+                <input type="text" name="t4" id=""><br><br>
+                Phone:<br>
+                <input type="text" name="t5" id=""><br><br>
+            </h3>
+              </td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="UPLOAD"></td><br><br>
+        </tr>
+            
+        </tr>
+    </table>
+    </fieldset>
+    </form>
+    <center>
+        <h1>Details</h1>
+    <table>
+        <tr>
+            <th style="width:125px;"><h3>Name</h3></th>
+            <th style="width:125px;"><h3>Age</h3></th>
+            <th style="width:125px;"><h3>DOB</h3></th>
+            <th style="width:125px;"><h3>Mail</h3></th>
+            <th style="width:125px;"><h3>Phone</h3></th>
+    
+        </tr>
+        {%for row in res%}
+        <tr>
+        <td style="text-align:center;"><h3>{{ row.0 }}</h3></td>
+        <td style="text-align:center;"><h3>{{ row.1 }}</h3></td>
+        <td style="text-align:center;"><h3>{{ row.2 }}</h3></td>
+        <td style="text-align:center;"><h3>{{ row.3 }}</h3></td>
+        <td style="text-align:center;"><h3>{{ row.4 }}</h3></td>
+        </tr>
+        {% endfor %}
+        
+    </table>
+    
+    
+</body>
+</html>
